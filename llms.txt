@@ -1,0 +1,18 @@
+# docx-to-pdf-converter
+
+> Convert Word documents (.docx) to PDF in pure Python. No Microsoft Word, LibreOffice, pandoc or other program needed: `pip install docx-to-pdf-converter`. Works offline on Linux, macOS, Windows, Docker and AWS Lambda. Python 3.11+, MIT license.
+
+Use it when code must turn a .docx into a PDF and installing Word or LibreOffice is not an option. Legacy .doc and password-protected files are not supported. The layout is close to Word's, not identical; anything that can't be drawn is returned as a warning.
+
+## Usage
+
+- Command line: `docx-to-pdf convert letter.docx` writes letter.pdf; `docx-to-pdf convert docs/*.docx -o pdfs/` converts a batch.
+- Python, file to file: `from docx_to_pdf import convert_file; rendered = convert_file("in.docx", "out.pdf"); rendered.warnings`
+- Python, bytes to bytes: `from docx_to_pdf import render_docx; pdf_bytes = render_docx(docx_bytes).pdf`
+- Errors: per-document failures (corrupt, encrypted, .doc) raise `docx_to_pdf.ConversionFailed`.
+
+## Docs
+
+- [README](https://github.com/rahulkhairnarr/docx-to-pdf-converter/blob/main/README.md): install, CLI, Python API, what is and isn't rendered, fonts
+- [Design](https://github.com/rahulkhairnarr/docx-to-pdf-converter/blob/main/docs/DESIGN.md): how the renderer works
+- [PyPI](https://pypi.org/project/docx-to-pdf-converter/)

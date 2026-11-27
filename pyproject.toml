@@ -1,13 +1,13 @@
 [project]
 name = "docx-to-pdf-converter"
-version = "0.1.0"
+version = "0.1.1"
 description = "Convert Word documents (.docx) to PDF in pure Python: no Word, LibreOffice or other program needed."
 readme = "README.md"
 requires-python = ">=3.11"
 license = "MIT"
 license-files = ["LICENSE", "src/docx_to_pdf/fonts/licenses/*"]
 authors = [{ name = "Rahul Khairnar" }]
-keywords = ["docx", "pdf", "word", "converter", "reportlab"]
+keywords = ["docx", "pdf", "docx to pdf", "word to pdf", "convert docx to pdf", "word", "converter", "reportlab", "python-docx", "no libreoffice", "pure python", "serverless", "aws lambda"]
 classifiers = [
     "Development Status :: 3 - Alpha",
     "Intended Audience :: Developers",
@@ -17,6 +17,8 @@ classifiers = [
     "Programming Language :: Python :: 3.13",
     "Programming Language :: Python :: 3.14",
     "Operating System :: OS Independent",
+    "Environment :: Console",
+    "Topic :: Utilities",
     "Topic :: Office/Business :: Office Suites",
     "Topic :: Text Processing",
 ]
@@ -33,6 +35,8 @@ dependencies = [
 
 [project.urls]
 Homepage = "https://github.com/rahulkhairnarr/docx-to-pdf-converter"
+Documentation = "https://github.com/rahulkhairnarr/docx-to-pdf-converter#readme"
+Source = "https://github.com/rahulkhairnarr/docx-to-pdf-converter"
 Issues = "https://github.com/rahulkhairnarr/docx-to-pdf-converter/issues"
 Changelog = "https://github.com/rahulkhairnarr/docx-to-pdf-converter/blob/main/CHANGELOG.md"
 

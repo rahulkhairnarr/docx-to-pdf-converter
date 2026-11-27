@@ -1,5 +1,10 @@
 # docx-to-pdf-converter
 
+[![PyPI](https://img.shields.io/pypi/v/docx-to-pdf-converter)](https://pypi.org/project/docx-to-pdf-converter/)
+[![Python](https://img.shields.io/pypi/pyversions/docx-to-pdf-converter)](https://pypi.org/project/docx-to-pdf-converter/)
+[![tests](https://github.com/rahulkhairnarr/docx-to-pdf-converter/actions/workflows/tests.yml/badge.svg)](https://github.com/rahulkhairnarr/docx-to-pdf-converter/actions/workflows/tests.yml)
+[![License: MIT](https://img.shields.io/badge/license-MIT-blue)](LICENSE)
+
 Convert Word documents (`.docx`) to PDF **in pure Python**. No Microsoft Word,
 LibreOffice or other program is needed, so it runs the same on Linux, macOS,
 Windows, in containers and in serverless functions. [python-docx] reads the
@@ -19,10 +24,27 @@ rendered = convert_file("letter.docx")   # writes letter.pdf
 print(rendered.warnings)                 # anything that could not be drawn
 ```
 
+<img src="https://raw.githubusercontent.com/rahulkhairnarr/docx-to-pdf-converter/main/docs/sample-output.png" alt="A Word report with a header, headings, bullet and numbered lists and a table, converted to PDF by docx-to-pdf-converter" width="600">
+
 > **Status: alpha.** The layout is close to Word's, not identical: expect line
 > and page breaks in different places in some documents. Anything the converter
 > can't draw is reported as a warning rather than dropped silently. See
 > [What it renders](#what-it-renders-and-what-it-doesnt).
+
+## Why this one
+
+The usual ways to convert a `.docx` to PDF from Python all need another program:
+
+| Approach | Needs |
+|---|---|
+| `docx2pdf`, or Word through COM automation | Microsoft Word installed; Windows or macOS only |
+| LibreOffice `soffice --headless --convert-to pdf` | LibreOffice installed (hundreds of MB), slow to start, awkward in AWS Lambda and slim Docker images |
+| `pandoc` | A LaTeX engine for the PDF; the Word layout (pages, headers, tables) is not kept |
+| Online conversion APIs | Sending the document to a third party |
+| **docx-to-pdf-converter** | **Only `pip install`. Pure Python, runs offline, on Linux, macOS, Windows, Docker and serverless** |
+
+Use it to generate PDFs from Word templates in a web app, convert documents in a
+CI pipeline or a Lambda function, or batch-convert a folder of `.docx` files.
 
 ## Install
 
