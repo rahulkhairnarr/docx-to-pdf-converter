@@ -32,9 +32,9 @@ dependencies = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/OWNER/docx-to-pdf-converter"
-Issues = "https://github.com/OWNER/docx-to-pdf-converter/issues"
-Changelog = "https://github.com/OWNER/docx-to-pdf-converter/blob/main/CHANGELOG.md"
+Homepage = "https://github.com/rahulkhairnarr/docx-to-pdf-converter"
+Issues = "https://github.com/rahulkhairnarr/docx-to-pdf-converter/issues"
+Changelog = "https://github.com/rahulkhairnarr/docx-to-pdf-converter/blob/main/CHANGELOG.md"
 
 [project.scripts]
 docx-to-pdf = "docx_to_pdf.cli:main"

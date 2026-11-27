@@ -15,7 +15,7 @@ The most useful report includes:
 You need [uv](https://docs.astral.sh/uv/).
 
 ```sh
-git clone https://github.com/OWNER/docx-to-pdf-converter
+git clone https://github.com/rahulkhairnarr/docx-to-pdf-converter
 cd docx-to-pdf-converter
 uv sync                     # creates .venv with the package and the dev tools
 uv run pytest               # the test suite

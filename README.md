@@ -31,7 +31,7 @@ Requires Python 3.11 or newer.
 ```sh
 pip install docx-to-pdf-converter
 # or straight from GitHub:
-pip install "git+https://github.com/OWNER/docx-to-pdf-converter"
+pip install "git+https://github.com/rahulkhairnarr/docx-to-pdf-converter"
 # or with uv:
 uv add docx-to-pdf-converter
 ```
