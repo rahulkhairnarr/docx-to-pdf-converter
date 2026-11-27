@@ -1,0 +1,60 @@
+[project]
+name = "docx-to-pdf-converter"
+version = "0.1.0"
+description = "Convert Word documents (.docx) to PDF in pure Python: no Word, LibreOffice or other program needed."
+readme = "README.md"
+requires-python = ">=3.11"
+license = "MIT"
+license-files = ["LICENSE", "src/docx_to_pdf/fonts/licenses/*"]
+authors = [{ name = "Rahul Khairnar" }]
+keywords = ["docx", "pdf", "word", "converter", "reportlab"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
+    "Operating System :: OS Independent",
+    "Topic :: Office/Business :: Office Suites",
+    "Topic :: Text Processing",
+]
+dependencies = [
+    # The command-line interface.
+    "typer>=0.12",
+    # Reads the .docx (and brings lxml for the XML it doesn't model).
+    "python-docx>=1.2.0",
+    # Draws the PDF. Pure Python plus wheels; needs no system libraries.
+    "reportlab>=5.1.2",
+    # Reads image sizes and formats; already a dependency of reportlab.
+    "pillow",
+]
+
+[project.urls]
+Homepage = "https://github.com/OWNER/docx-to-pdf-converter"
+Issues = "https://github.com/OWNER/docx-to-pdf-converter/issues"
+Changelog = "https://github.com/OWNER/docx-to-pdf-converter/blob/main/CHANGELOG.md"
+
+[project.scripts]
+docx-to-pdf = "docx_to_pdf.cli:main"
+
+[dependency-groups]
+dev = [
+    # Reads the PDFs back in the tests.
+    "pypdfium2==4.30.0",
+    "pytest>=8",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/docx_to_pdf"]  # includes the bundled fonts and their licences
+
+[tool.hatch.build.targets.sdist]
+include = ["src", "tests", "scripts", "docs", "README.md", "CHANGELOG.md", "LICENSE", "pyproject.toml"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
